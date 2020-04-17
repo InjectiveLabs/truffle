@@ -149,6 +149,8 @@ export default class Session {
           primarySourceId
         } = contract;
 
+        debug("contract from comilation.contracts: %o");
+
         //hopefully we can get rid of this step eventually, but not yet
         if (typeof binary === "object") {
           binary = shimBytecode(binary);
@@ -161,8 +163,11 @@ export default class Session {
         if (primarySourceId !== undefined) {
           //I'm assuming this finds it! it had better!
           primarySourceIndex = compilation.sources.findIndex(
-            source => source.id === primarySourceId
+            source => source !== undefined && source.id === primarySourceId
           );
+        }
+        if (!primarySourceIndex) {
+          debug("primarySourceIndex undefined for %s", primarySourceId);
         }
         //otherwise leave it undefined
 
