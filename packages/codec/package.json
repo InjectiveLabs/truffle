@@ -48,7 +48,7 @@
     "@zerollup/ts-transform-paths": "^1.7.3",
     "ttypescript": "^1.5.7",
     "typedoc": "0.15.0",
-    "typedoc-plugin-external-module-name": "^2.1.0",
+    "typedoc-plugin-external-module-name": "^4.0.3",
     "typescript": "^3.6.2"
   },
   "dependencies": {
